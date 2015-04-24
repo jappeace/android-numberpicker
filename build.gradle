@@ -20,20 +20,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility javaVersion
-        targetCompatibility javaVersion
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
 	lintOptions {
 		abortOnError false
 	}
     packagingOptions {
         exclude 'META-INF/NOTICE.txt' // gpars said so
-    }
-}
-project.androidGroovy {
-    options {
-        sourceCompatibility = javaVersion
-        targetCompatibility = javaVersion
     }
 }
 dependencies {
