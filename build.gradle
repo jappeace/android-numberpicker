@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+		mavenLocal()
+		jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.3'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "20"
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 18
+    }
+
+    compileOptions {
+        sourceCompatibility javaVersion
+        targetCompatibility javaVersion
+    }
+	lintOptions {
+		abortOnError false
+	}
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt' // gpars said so
+    }
+}
+project.androidGroovy {
+    options {
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
+    }
+}
+dependencies {
+}
+
